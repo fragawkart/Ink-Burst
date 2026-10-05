@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Polityka prywatności — Ink Burst</title>
+
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicona.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="assets/favicona.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --surface:#171012;
+      --accent:#7a2635;
+      --detail:#e7a0a8;
+      --text:#f4efe9;
+      --soft:rgba(244,239,233,.68);
+      --line:rgba(244,239,233,.15);
+      --display:'Syne',sans-serif;
+      --body:'Inter',sans-serif;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--body);
+      line-height:1.75;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    .wrap{
+      width:min(100%,920px);
+      margin:0 auto;
+      padding:0 clamp(1.2rem,4vw,3rem);
+    }
+
+    header{
+      padding:1.2rem 0;
+      border-bottom:1px solid var(--line);
+      background:rgba(11,11,13,.94);
+    }
+
+    header .wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .logo{
+      font-family:var(--display);
+      font-size:1.2rem;
+      font-weight:800;
+      letter-spacing:-.03em;
+      text-decoration:none;
+    }
+
+    .logo i{
+      color:var(--detail);
+      font-style:normal;
+    }
+
+    .back{
+      color:var(--soft);
+      font-size:.85rem;
+      text-decoration:none;
+    }
+
+    .back:hover{
+      color:var(--detail);
+    }
+
+    main{
+      padding:clamp(4rem,10vw,8rem) 0;
+    }
+
+    .eyebrow{
+      display:flex;
+      align-items:center;
+      gap:.8rem;
+      color:var(--detail);
+      font-size:.72rem;
+      letter-spacing:.25em;
+      text-transform:uppercase;
+    }
+
+    .eyebrow::before{
+      width:34px;
+      height:1px;
+      background:var(--detail);
+      content:"";
+    }
+
+    h1,
+    h2{
+      font-family:var(--display);
+      line-height:.95;
+      letter-spacing:-.035em;
+    }
+
+    h1{
+      max-width:650px;
+      margin:1.3rem 0 2rem;
+      font-size:clamp(3rem,8vw,6rem);
+    }
+
+    h1 em{
+      color:var(--detail);
+      font-style:normal;
+    }
+
+    .intro{
+      max-width:680px;
+      color:var(--soft);
+      font-size:1rem;
+    }
+
+    .policy{
+      display:grid;
+      gap:0;
+      margin-top:4rem;
+      border-top:1px solid var(--line);
+    }
+
+    .policy section{
+      padding:2rem 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    h2{
+      margin-bottom:1rem;
+      font-size:clamp(1.35rem,3vw,2rem);
+    }
+
+    p,
+    li{
+      color:var(--soft);
+      font-size:.94rem;
+    }
+
+    p + p{
+      margin-top:.9rem;
+    }
+
+    ul{
+      display:grid;
+      gap:.5rem;
+      margin:1rem 0 0 1.15rem;
+    }
+
+    strong{
+      color:var(--text);
+      font-weight:600;
+    }
+
+    footer{
+      padding:2rem 0;
+      border-top:1px solid var(--line);
+      color:var(--soft);
+      font-size:.78rem;
+    }
+
+    @media(max-width:560px){
+      header .wrap{
+        align-items:flex-start;
+      }
+
+      .back{
+        text-align:right;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <a href="index.html" class="logo">INK<i>/</i>BURST</a>
+      <a href="index.html#footer" class="back">← Wróć na stronę</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <p class="eyebrow">Ink Burst</p>
+
+      <h1>Polityka<br><em>prywatności.</em></h1>
+
+      <p class="intro">
+        Poniżej wyjaśniamy, jakie dane mogą być przetwarzane podczas
+        korzystania ze strony Ink Burst oraz podczas rezerwacji wizyty.
+      </p>
+
+      <div class="policy">
+
+        <section>
+          <h2>1. Administrator danych</h2>
+
+          <p>
+            Administratorem danych osobowych jest <strong>[pełna nazwa właściciela
+            lub firmy Ink Burst]</strong>, prowadzący/a działalność pod adresem
+            <strong>[pełny adres studia]</strong>.
+          </p>
+
+          <p>
+            W sprawach dotyczących danych osobowych można skontaktować się pod
+            adresem: <a href="mailto:[twój-prawdziwy-email]">[twój-prawdziwy-email]</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Jakie dane przetwarzamy</h2>
+
+          <p>
+            Możemy przetwarzać dane przekazane dobrowolnie podczas kontaktu
+            e-mailowego lub rezerwacji wizyty, w szczególności imię, nazwisko,
+            adres e-mail, numer telefonu, wybraną usługę, termin wizyty oraz
+            informacje przekazane w wiadomości.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Cel przetwarzania</h2>
+
+          <p>Dane przetwarzamy wyłącznie w celu:</p>
+
+          <ul>
+            <li>udzielenia odpowiedzi na wiadomość lub zapytanie,</li>
+            <li>obsługi rezerwacji, konsultacji i realizacji usługi,</li>
+            <li>kontaktu w sprawie umówionego terminu,</li>
+            <li>spełnienia obowiązków wynikających z przepisów prawa.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>4. Rezerwacje przez Setmore</h2>
+
+          <p>
+            Rezerwacja wizyty odbywa się za pomocą platformy Setmore. Podczas
+            korzystania z osadzonego kalendarza dane mogą być przetwarzane przez
+            Setmore jako dostawcę systemu rezerwacji.
+          </p>
+
+          <p>
+            Zakres i zasady przetwarzania danych przez Setmore określa polityka
+            prywatności tego usługodawcy dostępna na jego stronie internetowej.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Podstawa prawna</h2>
+
+          <p>
+            Dane są przetwarzane w celu podjęcia działań przed zawarciem umowy
+            lub wykonania usługi na Twoje żądanie, a w uzasadnionych przypadkach
+            również na podstawie prawnie uzasadnionego interesu administratora,
+            jakim jest kontakt i obsługa klienta.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Jak długo przechowujemy dane</h2>
+
+          <p>
+            Dane przechowujemy przez okres niezbędny do obsługi zapytania,
+            rezerwacji lub realizacji usługi, a następnie przez czas wymagany
+            przepisami prawa albo potrzebny do zabezpieczenia ewentualnych roszczeń.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Twoje prawa</h2>
+
+          <p>Masz prawo do:</p>
+
+          <ul>
+            <li>dostępu do swoich danych,</li>
+            <li>sprostowania lub usunięcia danych,</li>
+            <li>ograniczenia przetwarzania,</li>
+            <li>wniesienia sprzeciwu wobec przetwarzania,</li>
+            <li>przenoszenia danych, jeśli ma to zastosowanie,</li>
+            <li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>8. Pliki cookies</h2>
+
+          <p>
+            Strona może korzystać z plików cookies niezbędnych do jej prawidłowego
+            działania oraz z technologii wykorzystywanych przez zewnętrzne usługi,
+            w tym osadzony system rezerwacji Setmore.
+          </p>
+
+          <p>
+            Ustawienia cookies możesz zmienić w swojej przeglądarce internetowej.
+          </p>
+        </section>
+
+        <section>
+          <h2>9. Zmiany polityki</h2>
+
+          <p>
+            Polityka może być aktualizowana, jeśli zmieni się sposób działania
+            strony, system rezerwacji lub obowiązujące przepisy.
+          </p>
+
+          <p>
+            Ostatnia aktualizacja: <strong>5 października 2026 r.</strong>
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Ink Burst. Wszelkie prawa zastrzeżone.
+    </div>
+  </footer>
+</body>
+</html>

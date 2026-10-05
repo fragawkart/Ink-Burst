@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ink Burst – Studio Tatuażu Warszawa | Tatuaże autorskie</title>
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicona.png">
+<link rel="apple-touch-icon" sizes="512x512" href="assets/favicona.png">
+<meta name="description" content="Ink Burst – mroczne, autorskie studio tatuażu w Warszawie. Blackwork, fine line, projekty na zamówienie, cennik i bezpłatna konsultacja. Umów wizytę.">
+<meta name="keywords" content="studio tatuażu, tatuaż Warszawa, tatuaże autorskie, blackwork, fine line, cennik tatuaży, Ink Burst">
+<meta property="og:title" content="Ink Burst – Studio Tatuażu">
+<meta property="og:description" content="Mroczne, odważne i autorskie tatuaże. Twoja skóra, nasz wybuch.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<link rel="canonical" href="https://www.twojadomena.pl/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TattooParlor","name":"Ink Burst","description":"Autorskie studio tatuażu – blackwork, fine line, projekty na zamówienie.","telephone":"+48 000 000 000","email":"hello@twojafirma.pl","address":{"@type":"PostalAddress","streetAddress":"ul. Przykładowa 1","addressLocality":"Warszawa","addressCountry":"PL"},"url":"https://www.twojadomena.pl/"}
+</script>
+<style>
+:root{
+  /* prawie czarny atrament */
+  --bg:#0b0b0d;
+
+  /* ciemne powierzchnie strony */
+  --primary:#171012;
+
+  /* ciemna wiśnia do gradientów */
+  --secondary:#321218;
+
+  /* główny akcent: oxblood / ciemne bordo */
+  --accent:#7a2635;
+
+  /* biel z lekkim ciepłem — mniej sterylna */
+  --text:#f4efe9;
+
+  /* jasny, przygaszony różowo-kremowy detal */
+  --lime:#e7a0a8;
+
+  --soft:color-mix(in srgb,var(--text) 62%,transparent);
+  --line:color-mix(in srgb,var(--text) 14%,transparent);
+
+  --display:'Syne',sans-serif;
+  --body:'Inter',sans-serif;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  max-width:100%;
+  overflow-x:hidden;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--body);
+  line-height:1.65;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:99;
+  pointer-events:none;
+  opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection{
+  background:var(--accent);
+  color:var(--text);
+}
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background:var(--bg);
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius:10px;
+  background:var(--accent);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+h1,
+h2,
+h3{
+  font-family:var(--display);
+  line-height:.95;
+  letter-spacing:-.02em;
+}
+
+h2{
+  font-size:clamp(2.4rem,7vw,5.5rem);
+  font-weight:800;
+}
+
+section{
+  position:relative;
+}
+
+.wrap{
+  width:min(100%,1240px);
+  margin:0 auto;
+  padding-inline:clamp(1.2rem,4vw,3rem);
+}
+
+.tag{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  margin-bottom:1.5rem;
+  color:var(--lime);
+  font-size:.75rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+}
+
+.tag::before{
+  width:40px;
+  height:1px;
+  background:var(--lime);
+  content:"";
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s,transform .8s;
+}
+
+.reveal.in{
+  opacity:1;
+  transform:none;
+}
+
+.btn{
+  display:inline-block;
+  padding:.95rem 2rem;
+  border:1px solid var(--lime);
+  border-radius:50px;
+  background:transparent;
+  color:var(--text);
+  cursor:pointer;
+  font-family:var(--body);
+  font-size:.95rem;
+  font-weight:500;
+  line-height:1.2;
+  text-align:center;
+  transition:background .3s,color .3s,transform .3s;
+}
+
+.btn:hover{
+  background:var(--lime);
+  color:var(--primary);
+  transform:translateY(-2px);
+}
+
+.btn.fill{
+  border-color:var(--accent);
+  background:var(--accent);
+}
+
+.btn.fill:hover{
+  background:var(--lime);
+  border-color:var(--lime);
+}
+
+button.btn{
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+/* Header */
+header{
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  z-index:50;
+  padding:1.1rem 0;
+  background:linear-gradient(var(--bg),transparent);
+}
+
+header .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-family:var(--display);
+  font-size:1.25rem;
+  font-weight:800;
+  letter-spacing:-.02em;
+}
+
+.logo i{
+  color:var(--lime);
+  font-style:normal;
+}
+
+nav{
+  display:flex;
+  gap:1.8rem;
+  font-size:.85rem;
+}
+
+nav a{
+  color:var(--soft);
+  transition:color .3s;
+}
+
+nav a:hover{
+  color:var(--lime);
+}
+
+.menu-toggle{
+  display:none;
+}
+
+/* Hero */
+#hero{
+  display:flex;
+  min-height:720px;
+  height:100svh;
+  padding-top:6rem;
+  overflow:hidden;
+  flex-direction:column;
+  justify-content:flex-end;
+  background:
+    radial-gradient(ellipse at 75% 35%,var(--secondary),transparent 55%),
+    radial-gradient(ellipse at 10% 90%,var(--primary),transparent 60%);
+}
+
+.blob{
+  position:absolute;
+  top:12vh;
+  right:-8vw;
+  width:min(60vw,640px);
+  aspect-ratio:1;
+  border-radius:62% 38% 55% 45% / 48% 58% 42% 52%;
+  background:radial-gradient(circle at 35% 30%,var(--accent),var(--primary) 55%,#000 80%);
+  box-shadow:0 0 120px color-mix(in srgb,var(--accent) 35%,transparent);
+  animation:morph 14s ease-in-out infinite;
+}
+
+.blob::after{
+  position:absolute;
+  inset:18%;
+  border:1px dashed color-mix(in srgb,var(--text) 25%,transparent);
+  border-radius:inherit;
+  content:"";
+}
+
+.drop{
+  position:absolute;
+  border-radius:50%;
+  background:var(--accent);
+}
+
+.d1{
+  top:30vh;
+  right:48vw;
+  width:36px;
+  height:36px;
+  opacity:.7;
+}
+
+.d2{
+  top:44vh;
+  right:42vw;
+  width:14px;
+  height:14px;
+  background:var(--lime);
+}
+
+.d3{
+  right:6vw;
+  bottom:24vh;
+  width:70px;
+  height:70px;
+  background:var(--secondary);
+}
+
+.hero-in{
+  position:relative;
+  z-index:2;
+  width:100%;
+  padding-bottom:clamp(1.5rem,3vh,2.5rem);
+}
+
+.hero-wordmark{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1180px;
+  margin:clamp(3rem,10vh,7rem) auto 0;
+  transform:translate(-3vw,-10vh);
+}
+
+.ink-word,
+.burst-word{
+  font-family:var(--display);
+  font-weight:800;
+  line-height:.8;
+  letter-spacing:-.06em;
+  text-transform:uppercase;
+  user-select:none;
+}
+
+.ink-word{
+  color:var(--text);
+  font-size:clamp(4rem,19vw,15rem);
+}
+
+.burst-word{
+  display:flex;
+  align-items:center;
+  margin-left:clamp(1rem,10vw,9rem);
+  color:transparent;
+  font-size:clamp(4rem,19vw,15rem);
+  -webkit-text-stroke:2px var(--text);
+}
+
+.burst-word span{
+  display:inline-block;
+  color:transparent;
+  transition:color .55s ease,-webkit-text-fill-color .55s ease,text-shadow .55s ease;
+  -webkit-text-stroke:2px var(--text);
+}
+
+.burst-word.ink-filled span,
+.burst-word span.ink-filled{
+  color:var(--text);
+  text-shadow:0 0 28px rgba(255,255,255,.16);
+  -webkit-text-fill-color:var(--text);
+}
+
+.ink-drops{
+  position:absolute;
+  top:-28%;
+  left:0;
+  z-index:10;
+  width:100%;
+  height:170%;
+  overflow:visible;
+  pointer-events:none;
+}
+
+.ink-drop{
+  opacity:0;
+  fill:var(--text);
+  filter:drop-shadow(0 0 8px rgba(255,255,255,.48));
+  transform-box:fill-box;
+  transform-origin:center;
+}
+
+.ink-drop.is-flying{
+  opacity:1;
+}
+
+.hero-sub{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin-top:2.8rem;
+  flex-wrap:wrap;
+}
+
+.hero-sub .btn-outline{
+  border-color:var(--text);
+  background:transparent;
+  color:var(--text);
+}
+
+.hero-sub .btn-outline:hover{
+  border-color:var(--text);
+  background:var(--text);
+  color:var(--primary);
+}
+
+/* Infinite marquee */
+.marq{
+  --marq-gap:2.6rem;
+  position:relative;
+  z-index:2;
+  padding:1rem 0;
+  overflow:hidden;
+  border-block:1px solid var(--line);
+  background:var(--primary);
+}
+
+.marq-track{
+  display:flex;
+  width:max-content;
+  will-change:transform;
+  animation:marqMove 32s linear infinite;
+}
+
+.marq-group{
+  display:flex;
+  align-items:center;
+  flex:none;
+  gap:var(--marq-gap);
+  padding-right:var(--marq-gap);
+  font-family:var(--display);
+  font-size:1.3rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.marq b{
+  color:var(--lime);
+  font-weight:700;
+}
+
+.marq:hover .marq-track{
+  animation-play-state:paused;
+}
+
+@keyframes marqMove{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* About */
+#about{
+  padding:clamp(5rem,12vw,10rem) 0;
+  overflow:hidden;
+}
+
+.about-g{
+  display:grid;
+  grid-template-columns:minmax(280px,.9fr) minmax(320px,1.1fr);
+  align-items:center;
+  gap:clamp(2.5rem,7vw,7rem);
+}
+
+.about-photo{
+  position:relative;
+  min-height:clamp(430px,50vw,670px);
+  margin:0;
+  overflow:hidden;
+  isolation:isolate;
+  clip-path:polygon(0 5%,100% 0,100% 94%,0 100%);
+  background:var(--primary);
+}
+
+.about-photo::before{
+  position:absolute;
+  z-index:1;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(9,30,6,.08) 25%,rgba(9,30,6,.25) 65%,rgba(9,30,6,.88) 100%),
+    linear-gradient(90deg,rgba(9,30,6,.30),transparent 55%);
+  content:"";
+}
+
+.about-photo img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:saturate(.78) contrast(1.12) brightness(.82);
+  transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .7s ease;
+}
+
+.about-photo:hover img{
+  filter:saturate(.95) contrast(1.08) brightness(.93);
+  transform:scale(1.055);
+}
+
+.about-photo-label{
+  position:absolute;
+  bottom:1.15rem;
+  left:1.15rem;
+  z-index:2;
+  color:var(--text);
+  font-size:.68rem;
+  letter-spacing:.22em;
+  opacity:.8;
+  text-transform:uppercase;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+}
+
+.about-t h2{
+  margin-bottom:1.5rem;
+}
+
+.about-t h2 em{
+  color:var(--lime);
+  font-style:normal;
+}
+
+.about-lead{
+  max-width:430px;
+  color:var(--soft);
+  font-size:clamp(1rem,1.4vw,1.14rem);
+  line-height:1.7;
+}
+
+.about-rules{
+  display:grid;
+  max-width:510px;
+  margin-top:2.6rem;
+  border-top:1px solid var(--line);
+}
+
+.about-rules > div{
+  display:grid;
+  grid-template-columns:42px minmax(120px,1fr) 1.35fr;
+  align-items:baseline;
+  gap:1rem;
+  padding:1rem 0;
+  border-bottom:1px solid var(--line);
+}
+
+.about-rules span{
+  color:var(--lime);
+  font-family:var(--display);
+  font-size:.84rem;
+}
+
+.about-rules strong{
+  color:var(--text);
+  font-family:var(--display);
+  font-size:1rem;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+}
+
+.about-rules small{
+  color:var(--soft);
+  font-size:.78rem;
+}
+
+/* Services */
+#services{
+  padding:clamp(5.5rem,11vw,9rem) 0;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 88% 8%,rgba(52,107,20,.22),transparent 28%),
+    var(--primary);
+  clip-path:polygon(0 3vw,100% 0,100% calc(100% - 3vw),0 100%);
+}
+
+.services-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:2rem;
+  margin-bottom:clamp(2.5rem,5vw,4.2rem);
+}
+
+.services-head h2 em{
+  color:var(--lime);
+  font-style:normal;
+}
+
+.services-head::after{
+  padding-bottom:.4rem;
+  color:var(--soft);
+  content:"CENY ORIENTACYJNE";
+  font-size:.68rem;
+  letter-spacing:.18em;
+}
+
+.price-list{
+  border-top:1px solid rgba(200,255,154,.20);
+}
+
+.price-item{
+  position:relative;
+  display:grid;
+  grid-template-columns:70px minmax(0,1fr) minmax(250px,.5fr);
+  align-items:stretch;
+  min-height:145px;
+  overflow:hidden;
+  border-bottom:1px solid rgba(200,255,154,.16);
+  background:rgba(3,9,3,.34);
+  transition:background .35s ease,transform .35s ease;
+}
+
+.price-item::before{
+  position:absolute;
+  z-index:0;
+  inset:0;
+  opacity:0;
+  background:linear-gradient(90deg,rgba(52,107,20,.45),rgba(19,51,5,.20) 55%,transparent);
+  content:"";
+  transition:opacity .35s ease;
+}
+
+.price-item:hover{
+  background:rgba(3,9,3,.62);
+  transform:translateX(.45rem);
+}
+
+.price-item:hover::before{
+  opacity:1;
+}
+
+.price-no,
+.price-main,
+.price-value{
+  position:relative;
+  z-index:1;
+}
+
+.price-no{
+  display:flex;
+  align-items:flex-start;
+  padding:1.9rem 1rem;
+  color:var(--lime);
+  font-family:var(--display);
+  font-size:.85rem;
+  letter-spacing:.08em;
+}
+
+.price-main{
+  display:flex;
+  justify-content:center;
+  min-width:0;
+  padding:1.6rem 2rem 1.6rem 0;
+  flex-direction:column;
+}
+
+.price-main h3{
+  color:var(--text);
+  font-size:clamp(1.65rem,3.3vw,3.25rem);
+  font-weight:600;
+  line-height:.92;
+  letter-spacing:-.025em;
+  text-transform:uppercase;
+}
+
+.price-main p{
+  margin-top:.55rem;
+  color:var(--soft);
+  font-size:.84rem;
+}
+
+.price-value{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:1.6rem clamp(1.2rem,3vw,2.6rem);
+  border-left:1px solid rgba(200,255,154,.16);
+  background:rgba(0,0,0,.13);
+  text-align:right;
+  flex-direction:column;
+}
+
+.price-value > span{
+  color:var(--soft);
+  font-size:.66rem;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+}
+
+.price-value strong{
+  display:block;
+  margin:.08rem 0 .18rem;
+  color:var(--lime);
+  font-family:var(--display);
+  font-size:clamp(1.65rem,2.7vw,2.55rem);
+  line-height:1;
+  letter-spacing:-.035em;
+}
+
+.price-value small{
+  color:var(--soft);
+  font-size:.72rem;
+}
+
+.price-item:hover .price-main h3{
+  color:var(--lime);
+}
+
+.price-item:hover .price-value{
+  background:rgba(52,107,20,.17);
+}
+
+.services-note{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+  margin-top:2rem;
+}
+
+.services-note p{
+  max-width:480px;
+  color:var(--soft);
+  font-size:.84rem;
+  line-height:1.65;
+}
+
+/* Portfolio */
+#portfolio{
+  padding:clamp(5rem,11vw,9rem) 0;
+  overflow:hidden;
+  background:var(--bg);
+}
+
+.portfolio-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:2rem;
+  margin-bottom:clamp(2rem,5vw,4rem);
+}
+
+.portfolio-head h2 em{
+  color:var(--lime);
+  font-style:normal;
+}
+
+.portfolio-slider{
+  display:flex;
+  gap:clamp(.8rem,1.6vw,1.35rem);
+  padding:.4rem clamp(1.2rem,4vw,3rem) 1.3rem;
+  overflow-x:auto;
+  overscroll-behavior-x:contain;
+  scrollbar-color:var(--accent) transparent;
+  scrollbar-width:thin;
+  cursor:default;
+}
+
+.portfolio-slider::-webkit-scrollbar{
+  height:6px;
+}
+
+.portfolio-slider::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+.portfolio-slider::-webkit-scrollbar-thumb{
+  border-radius:10px;
+  background:var(--accent);
+}
+
+.portfolio-slide{
+  position:relative;
+  overflow:hidden;
+  flex:0 0 auto;
+  border:1px solid var(--line);
+  background:var(--primary);
+  box-shadow:0 18px 38px rgba(0,0,0,.26);
+  cursor:default;
+  user-select:none;
+  -webkit-user-select:none;
+}
+
+.portfolio-slide--wide{
+  width:min(70vw,860px);
+  aspect-ratio:16 / 10;
+}
+
+.portfolio-slide--portrait{
+  width:min(30vw,370px);
+  aspect-ratio:3 / 4;
+}
+
+.portfolio-slide img{
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  object-fit:cover;
+  user-select:none;
+  -webkit-user-drag:none;
+  transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .55s ease;
+  filter:brightness(.82) saturate(.84);
+}
+
+.portfolio-slide:hover img{
+  filter:brightness(1) saturate(1);
+  transform:scale(1.045);
+}
+
+.portfolio-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+  margin-top:2rem;
+}
+
+.portfolio-bottom p{
+  max-width:450px;
+  color:var(--soft);
+  font-size:.86rem;
+}
+
+/* FAQ + Contact */
+#contact{
+  padding:clamp(4rem,10vw,8rem) 0 0;
+  background:linear-gradient(180deg,var(--bg),var(--primary));
+}
+
+.faq-g{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:clamp(2rem,6vw,5rem);
+  margin-bottom:clamp(5rem,10vw,9rem);
+}
+
+details{
+  padding:1.2rem 0;
+  border-bottom:1px solid var(--line);
+}
+
+summary{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  cursor:pointer;
+  font-family:var(--display);
+  font-size:1.15rem;
+  list-style:none;
+}
+
+summary::-webkit-details-marker{
+  display:none;
+}
+
+summary::after{
+  color:var(--lime);
+  content:"+";
+  font-size:1.5rem;
+  line-height:1;
+  transition:transform .3s;
+}
+
+details[open] summary::after{
+  transform:rotate(45deg);
+}
+
+details p{
+  max-width:560px;
+  margin-top:.8rem;
+  color:var(--soft);
+}
+
+.contact-booking{
+  display:grid;
+  grid-template-columns:minmax(250px,420px) minmax(0,1fr);
+  align-items:start;
+  column-gap:clamp(4rem,11vw,12rem);
+}
+
+.contact-copy{
+  padding-top:1.2rem;
+}
+
+.contact-copy h2{
+  max-width:500px;
+  margin-bottom:1.6rem;
+}
+
+.contact-copy h2 span{
+  color:var(--lime);
+}
+
+.contact-email{
+  display:inline-block;
+  margin-top:2rem;
+  padding-bottom:.25rem;
+  border-bottom:1px solid var(--lime);
+  color:var(--text);
+  font-family:var(--display);
+  font-size:clamp(1.2rem,2.4vw,1.8rem);
+  font-weight:700;
+  letter-spacing:-.035em;
+  overflow-wrap:anywhere;
+  transition:color .25s ease,border-color .25s ease;
+}
+
+.contact-email:hover{
+  border-color:var(--text);
+  color:var(--lime);
+}
+
+.contact-response{
+  margin-top:.75rem;
+  color:var(--soft);
+  font-size:.76rem;
+}
+
+.booking-widget{
+  width:min(100%,640px);
+  overflow:hidden;
+  justify-self:end;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:14px;
+  background:#f7f7f3;
+  color:#151515;
+  box-shadow:0 24px 55px rgba(0,0,0,.35);
+}
+
+.booking-widget-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:1.2rem;
+  padding:1.4rem 1.5rem 1.1rem;
+  border-bottom:1px solid rgba(0,0,0,.1);
+  background:#fff;
+}
+
+.booking-widget .booking-kicker{
+  color:#5f8f2c;
+  font-size:.68rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.booking-widget h3{
+  margin-top:.4rem;
+  color:#161616;
+  font-family:var(--display);
+  font-size:clamp(1.5rem,2.5vw,2.25rem);
+  font-weight:700;
+  line-height:.95;
+  letter-spacing:-.04em;
+  text-transform:uppercase;
+}
+
+.booking-live{
+  display:flex;
+  align-items:center;
+  gap:.45rem;
+  margin-top:.15rem;
+  color:#5e5e5b;
+  font-size:.66rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.booking-live i{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#72ae36;
+  box-shadow:0 0 0 4px rgba(114,174,54,.16);
+}
+
+.booking-calendar{
+  height:545px;
+  background:#fff;
+}
+
+.booking-calendar iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  background:#fff;
+}
+
+.giant{
+  margin-top:4rem;
+  overflow:hidden;
+  color:transparent;
+  font-family:var(--display);
+  font-size:clamp(3rem,16vw,13rem);
+  font-weight:800;
+  line-height:.8;
+  text-align:center;
+  text-transform:uppercase;
+  user-select:none;
+  -webkit-text-stroke:1px var(--line);
+}
+
+footer{
+  margin-top:clamp(4rem,8vw,7rem);
+  padding:2rem 0;
+  border-top:1px solid var(--line);
+  color:var(--soft);
+  font-size:.8rem;
+}
+
+footer .wrap{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:1rem;
+}
+
+footer a:hover{
+  color:var(--lime);
+}
+
+/* Tablet */
+@media(max-width:1000px){
+  .contact-booking{
+    grid-template-columns:1fr;
+    gap:2.5rem;
+  }
+
+  .contact-copy{
+    padding-top:0;
+  }
+
+  .booking-widget{
+    width:100%;
+    max-width:680px;
+    justify-self:start;
+  }
+
+  .booking-calendar{
+    height:620px;
+  }
+}
+
+@media(max-width:820px){
+  header{
+    padding:.85rem 0;
+    background:linear-gradient(180deg,rgba(13,13,13,.98),rgba(13,13,13,.75) 72%,transparent);
+    backdrop-filter:blur(10px);
+  }
+
+  header .wrap{
+    position:relative;
+    min-height:42px;
+  }
+
+  .logo{
+    position:relative;
+    z-index:62;
+    font-size:1.12rem;
+  }
+
+  .menu-toggle{
+    position:relative;
+    z-index:62;
+    display:flex;
+    width:44px;
+    height:44px;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    border:1px solid rgba(200,255,154,.32);
+    border-radius:50%;
+    background:rgba(9,30,6,.68);
+    color:var(--text);
+    cursor:pointer;
+    flex-direction:column;
+  }
+
+  .menu-toggle span{
+    display:block;
+    width:18px;
+    height:1.5px;
+    background:var(--text);
+    transition:transform .28s ease,opacity .22s ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){
+    transform:translateY(6.5px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){
+    opacity:0;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){
+    transform:translateY(-6.5px) rotate(-45deg);
+  }
+
+  header nav{
+    position:fixed;
+    z-index:60;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1.2rem;
+    padding:6rem 1.5rem 2rem;
+    visibility:hidden;
+    background:radial-gradient(circle at 78% 16%,rgba(52,107,20,.34),transparent 34%),rgba(9,30,6,.985);
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(-2%);
+    transition:opacity .3s ease,transform .3s ease,visibility .3s;
+    flex-direction:column;
+  }
+
+  header nav.is-open{
+    visibility:visible;
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+  }
+
+  header nav a,
+  header nav a:not(.cta){
+    display:block;
+    color:var(--text);
+    font-family:var(--display);
+    font-size:clamp(1.65rem,8vw,2.45rem);
+    font-weight:700;
+    line-height:1;
+  }
+
+  header nav a.cta{
+    margin-top:.8rem;
+    padding:.85rem 1.55rem;
+    border:1px solid var(--lime);
+    border-radius:50px;
+    color:var(--lime);
+    font-family:var(--body);
+    font-size:.92rem;
+    font-weight:500;
+  }
+
+  #hero{
+    min-height:100svh;
+    height:auto;
+    padding-top:5.8rem;
+  }
+
+  .hero-in{
+    padding-bottom:1.25rem;
+  }
+
+  .hero-wordmark{
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:0;
+    transform:translate(0,-3vh);
+  }
+
+  .ink-word,
+  .burst-word{
+    width:100%;
+    max-width:100%;
+    font-size:clamp(3.9rem,19vw,7.4rem);
+    line-height:.78;
+    white-space:nowrap;
+  }
+
+  .ink-word{
+    padding-left:.1rem;
+  }
+
+  .burst-word{
+    margin-left:clamp(.25rem,5vw,1.5rem);
+    font-size:clamp(3.7rem,18vw,7rem);
+    letter-spacing:-.08em;
+    -webkit-text-stroke:1.4px var(--text);
+  }
+
+  .burst-word span{
+    -webkit-text-stroke:1.4px var(--text);
+  }
+
+  .ink-drops{
+    top:-24%;
+    left:-4%;
+    z-index:12;
+    display:block;
+    width:108%;
+    height:168%;
+    overflow:visible;
+  }
+
+  .ink-drop{
+    filter:drop-shadow(0 0 5px rgba(255,255,255,.5));
+  }
+
+  .blob{
+    top:13vh;
+    right:-30vw;
+    width:92vw;
+    opacity:.78;
+  }
+
+  .d1{
+    top:24vh;
+    right:66vw;
+  }
+
+  .d2{
+    top:38vh;
+    right:44vw;
+  }
+
+  .d3{
+    right:-7vw;
+    bottom:30vh;
+  }
+
+  .hero-sub{
+    margin-top:1.8rem;
+    padding:0 .1rem;
+  }
+
+  .marq{
+    padding:.78rem 0;
+  }
+
+  .marq-group{
+    gap:1.7rem;
+    font-size:1rem;
+  }
+
+  #about{
+    padding:5rem 0;
+  }
+
+  .about-g{
+    grid-template-columns:1fr;
+    gap:2.5rem;
+  }
+
+  .about-photo{
+    min-height:min(130vw,590px);
+  }
+
+  .about-t h2,
+  .services-head h2,
+  .portfolio-head h2,
+  .faq-g h2,
+  .contact-copy h2{
+    font-size:clamp(2.6rem,12vw,4.4rem);
+  }
+
+  .about-rules{
+    margin-top:2rem;
+  }
+
+  .about-rules > div{
+    grid-template-columns:32px 1fr;
+    gap:.65rem;
+  }
+
+  .about-rules small{
+    grid-column:2;
+    margin-top:-.45rem;
+  }
+
+  #services,
+  #portfolio{
+    padding:5rem 0;
+  }
+
+  .services-head{
+    display:block;
+    margin-bottom:2.4rem;
+  }
+
+  .services-head::after{
+    display:block;
+    margin-top:1.2rem;
+  }
+
+  .price-item{
+    grid-template-columns:36px minmax(0,1fr);
+    min-height:0;
+  }
+
+  .price-no{
+    grid-column:1;
+    grid-row:1 / span 2;
+    padding:1.35rem .6rem 0 0;
+  }
+
+  .price-main{
+    grid-column:2;
+    padding:1.35rem 0 .55rem;
+  }
+
+  .price-main h3{
+    max-width:100%;
+    font-size:clamp(1.6rem,8.2vw,2.35rem);
+    overflow-wrap:anywhere;
+  }
+
+  .price-main p{
+    font-size:.79rem;
+    line-height:1.55;
+  }
+
+  .price-value{
+    grid-column:2;
+    display:flex;
+    align-items:baseline;
+    justify-content:flex-start;
+    gap:.25rem .5rem;
+    padding:0 0 1.3rem;
+    border-left:0;
+    background:transparent;
+    text-align:left;
+    flex-wrap:wrap;
+  }
+
+  .price-value > span,
+  .price-value strong{
+    display:inline;
+  }
+
+  .price-value strong{
+    margin:0;
+    font-size:1.35rem;
+  }
+
+  .price-value small{
+    display:block;
+    flex-basis:100%;
+    font-size:.66rem;
+  }
+
+  .price-item:hover{
+    transform:none;
+  }
+
+  .price-item:hover .price-value{
+    background:transparent;
+  }
+
+  .services-note,
+  .portfolio-bottom{
+    display:block;
+  }
+
+  .services-note .btn,
+  .portfolio-bottom .btn{
+    margin-top:1.25rem;
+  }
+
+  .portfolio-head{
+    display:block;
+  }
+
+  .portfolio-slider{
+    gap:.8rem;
+    padding-inline:1.2rem;
+  }
+
+  .portfolio-slide--wide{
+    width:86vw;
+  }
+
+  .portfolio-slide--portrait{
+    width:68vw;
+  }
+
+  #contact{
+    padding:5rem 0 0;
+  }
+
+  .faq-g{
+    grid-template-columns:1fr;
+    gap:3rem;
+    margin-bottom:5rem;
+  }
+
+  summary{
+    align-items:flex-start;
+    font-size:1.04rem;
+    line-height:1.25;
+  }
+
+  details p{
+    font-size:.9rem;
+  }
+
+  .giant{
+    margin-top:3rem;
+    font-size:clamp(3rem,17vw,6rem);
+    white-space:nowrap;
+  }
+
+  footer .wrap{
+    display:block;
+  }
+
+  footer .wrap > *{
+    display:block;
+  }
+
+  footer .wrap > * + *{
+    margin-top:.7rem;
+  }
+}
+
+@media(max-width:600px){
+  .booking-widget{
+    border-radius:10px;
+  }
+
+  .booking-widget-top{
+    display:block;
+    padding:1.2rem;
+  }
+
+  .booking-live{
+    margin-top:.9rem;
+  }
+
+  .booking-calendar{
+    height:650px;
+  }
+}
+
+@media(max-width:480px){
+  #hero{
+    min-height:680px;
+  }
+
+  .hero-wordmark{
+    transform:translate(0,-2vh);
+  }
+
+  .ink-word{
+    font-size:clamp(3.55rem,18.8vw,5.4rem);
+  }
+
+  .burst-word{
+    margin-left:clamp(.15rem,4vw,1rem);
+    font-size:clamp(3.35rem,17.2vw,5rem);
+    letter-spacing:-.09em;
+    -webkit-text-stroke:1.2px var(--text);
+  }
+
+  .burst-word span{
+    -webkit-text-stroke:1.2px var(--text);
+  }
+
+  .ink-drops{
+    top:-21%;
+    left:-8%;
+    width:116%;
+    height:160%;
+  }
+}
+
+@media(max-width:420px){
+  .wrap{
+    padding-inline:1rem;
+  }
+
+  .menu-toggle{
+    width:41px;
+    height:41px;
+  }
+
+  .hero-sub .btn{
+    width:100%;
+    min-width:0;
+  }
+
+  .about-photo{
+    min-height:430px;
+  }
+
+  .portfolio-slide--wide{
+    width:90vw;
+  }
+
+  .portfolio-slide--portrait{
+    width:74vw;
+  }
+
+  .booking-calendar{
+    height:620px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .marq-track{
+    animation:none;
+  }
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto !important;
+    transition-duration:.01ms !important;
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a href="#hero" class="logo">INK<i>/</i>BURST</a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Otwórz menu"
+      aria-expanded="false"
+      aria-controls="main-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="main-nav" aria-label="Menu główne">
+      <a href="#about">O nas</a>
+      <a href="#services">Usługi i cennik</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="cta">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="hero">
+  <div class="blob" aria-hidden="true"></div>
+  <span class="drop d1" aria-hidden="true"></span>
+<span class="drop d2" aria-hidden="true"></span>
+<span class="drop d3" aria-hidden="true"></span>
+
+<div class="wrap hero-in">
+<div class="hero-wordmark">
+  <div class="ink-word">INK</div>
+
+  <div class="burst-word" id="burstWord" aria-label="BURST">
+    <span>B</span>
+    <span>U</span>
+    <span>R</span>
+    <span>S</span>
+    <span>T</span>
+  </div>
+
+<svg class="ink-drops" viewBox="0 0 1000 620" aria-hidden="true">
+  <path
+    class="ink-drop drop-one"
+    d="M0 -18 C-11 -7 -14 2 -14 10 A14 14 0 0 0 14 10 C14 2 11 -7 0 -18 Z"
+  />
+</svg>
+</div>
+
+  <div class="hero-sub">
+    <a href="#contact" class="btn fill">Umów wizytę →</a>
+    <a href="#portfolio" class="btn btn-outline">Zobacz realizacje ↓</a>
+  </div>
+</div>
+  <div class="marq" aria-label="Specjalizacje Ink Burst">
+  <div class="marq-track">
+
+    <div class="marq-group">
+      <span>Blackwork</span><b>✦</b>
+      <span>Fine line</span><b>✦</b>
+      <span>Projekty autorskie</span><b>✦</b>
+      <span>Dotwork</span><b>✦</b>
+      <span>Cover up</span><b>✦</b>
+
+      <span>Blackwork</span><b>✦</b>
+      <span>Fine line</span><b>✦</b>
+      <span>Projekty autorskie</span><b>✦</b>
+      <span>Dotwork</span><b>✦</b>
+      <span>Cover up</span><b>✦</b>
+    </div>
+
+    <div class="marq-group" aria-hidden="true">
+      <span>Blackwork</span><b>✦</b>
+      <span>Fine line</span><b>✦</b>
+      <span>Projekty autorskie</span><b>✦</b>
+      <span>Dotwork</span><b>✦</b>
+      <span>Cover up</span><b>✦</b>
+
+      <span>Blackwork</span><b>✦</b>
+      <span>Fine line</span><b>✦</b>
+      <span>Projekty autorskie</span><b>✦</b>
+      <span>Dotwork</span><b>✦</b>
+      <span>Cover up</span><b>✦</b>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<section id="about">
+  <div class="wrap about-g">
+
+    <figure class="about-photo reveal">
+      <img
+        src="assets/tatuaz.jpg"
+        alt="Tatuażysta wykonujący tatuaż w studiu Ink Burst"
+      >
+
+      
+
+      <span class="about-photo-label" aria-hidden="true">
+        Ink Burst / Warszawa
+      </span>
+    </figure>
+
+    <article class="about-t reveal">
+      <p class="tag">O nas</p>
+
+      <h2>
+        Nie robimy<br>
+        <em>kopii.</em>
+      </h2>
+
+      <p class="about-lead">
+        Każdy projekt powstaje od zera — dla jednej osoby i jednej historii.
+      </p>
+
+      <div class="about-rules" aria-label="Zasady pracy Ink Burst">
+        <div>
+          <span>01</span>
+          <strong>Od zera</strong>
+          <small>Projekt na Twoją skórę.</small>
+        </div>
+
+        <div>
+          <span>02</span>
+          <strong>Bez pośpiechu</strong>
+          <small>Rozmowa, szkic, wykonanie.</small>
+        </div>
+
+        <div>
+          <span>03</span>
+          <strong>Pewna ręka</strong>
+          <small>Higiena i precyzja.</small>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+
+    <div class="services-head reveal">
+      <p class="tag">Usługi i cennik</p>
+      <h2>Wybierz<br><em>swój ślad.</em></h2>
+    </div>
+
+<div class="price-list reveal">
+
+  <article class="price-item">
+    <span class="price-no">01</span>
+
+    <div class="price-main">
+      <h3>Fine line</h3>
+      <p>Delikatna kreska i precyzyjny detal.</p>
+    </div>
+
+    <div class="price-value">
+      <span>od</span>
+      <strong>350 zł</strong>
+      <small>najczęściej 350–900 zł</small>
+    </div>
+  </article>
+
+  <article class="price-item">
+    <span class="price-no">02</span>
+
+    <div class="price-main">
+      <h3>Blackwork</h3>
+      <p>Czerń, kontrast i wyrazista forma.</p>
+    </div>
+
+    <div class="price-value">
+      <span>od</span>
+      <strong>500 zł</strong>
+      <small>najczęściej 500–1 400 zł</small>
+    </div>
+  </article>
+
+  <article class="price-item">
+    <span class="price-no">03</span>
+
+    <div class="price-main">
+      <h3>Dotwork</h3>
+      <p>Cień i struktura budowane z punktów.</p>
+    </div>
+
+    <div class="price-value">
+      <span>od</span>
+      <strong>500 zł</strong>
+      <small>najczęściej 500–1 600 zł</small>
+    </div>
+  </article>
+
+  <article class="price-item">
+    <span class="price-no">04</span>
+
+    <div class="price-main">
+      <h3>Projekt autorski</h3>
+      <p>Indywidualny wzór tworzony od zera.</p>
+    </div>
+
+    <div class="price-value">
+      <span>od</span>
+      <strong>700 zł</strong>
+      <small>najczęściej 700–2 000 zł</small>
+    </div>
+  </article>
+
+  <article class="price-item">
+    <span class="price-no">05</span>
+
+    <div class="price-main">
+      <h3>Cover up</h3>
+      <p>Nowy projekt dla istniejącego tatuażu.</p>
+    </div>
+
+    <div class="price-value">
+      <span>od</span>
+      <strong>900 zł</strong>
+      <small>najczęściej 900–2 500 zł</small>
+    </div>
+  </article>
+
+</div>
+
+    <div class="services-note reveal">
+      <p>Finalna cena zależy od wielkości, miejsca na ciele, detalu i czasu pracy.</p>
+      <a href="#contact" class="btn fill">Zapytaj o wycenę →</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="wrap">
+
+    <div class="portfolio-head reveal">
+      <div>
+        <p class="tag">Portfolio</p>
+        <h2>Ślady,<br><em>które zostają.</em></h2>
+      </div>
+
+      
+    </div>
+
+  </div>
+
+  <div class="portfolio-slider reveal" aria-label="Galeria realizacji Ink Burst">
+
+    <article class="portfolio-slide portfolio-slide--wide">
+      <img
+        src="assets/poziome1.jpg"
+        alt="Szeroki kadr tatuażu wykonany w Ink Burst"
+        loading="lazy"
+      >
+      
+    </article>
+
+    <article class="portfolio-slide portfolio-slide--portrait">
+      <img
+        src="assets/pionowe1.jpg"
+        alt="Tatuaż fine line wykonany w Ink Burst"
+        loading="lazy"
+      >
+
+    </article>
+
+    <article class="portfolio-slide portfolio-slide--portrait">
+      <img
+        src="assets/pionowe2.jpg"
+        alt="Tatuaż dotwork wykonany w Ink Burst"
+        loading="lazy"
+      >
+
+    </article>
+
+    <article class="portfolio-slide portfolio-slide--wide">
+      <img
+        src="assets/poziome2.jpg"
+        alt="Autorski tatuaż wykonany w Ink Burst"
+        loading="lazy"
+      >
+      
+    </article>
+
+    <article class="portfolio-slide portfolio-slide--portrait">
+      <img
+        src="assets/pionowe3.jpg"
+        alt="Tatuaż blackwork wykonany w Ink Burst"
+        loading="lazy"
+      >
+
+    </article>
+
+    <article class="portfolio-slide portfolio-slide--portrait">
+      <img
+        src="assets/pionowe4.jpg"
+        alt="Tatuaż fine line wykonany w Ink Burst"
+        loading="lazy"
+      >
+
+    </article>
+
+    <article class="portfolio-slide portfolio-slide--portrait">
+      <img
+        src="assets/pionowe5.jpg"
+        alt="Tatuaż cover up wykonany w Ink Burst"
+        loading="lazy"
+      >
+
+    </article>
+
+  </div>
+
+  <div class="wrap">
+    <div class="portfolio-bottom reveal">
+      <p>Każdy projekt powstaje od zera — dla jednej osoby i jednej historii.</p>
+      <a href="#contact" class="btn fill">Chcę swój projekt →</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="faq-g" id="faq">
+  <div class="reveal">
+    <p class="tag">FAQ</p>
+    <h2>Pytania<br>przed<br>igłą.</h2>
+  </div>
+
+  <div class="reveal">
+
+    <details open>
+      <summary>Czy tatuaż boli?</summary>
+      <p>
+        Odczucia są indywidualne i zależą głównie od miejsca na ciele,
+        wielkości wzoru oraz długości sesji. Pracujemy w spokojnym tempie
+        i robimy przerwy, kiedy ich potrzebujesz.
+      </p>
+    </details>
+
+    <details>
+      <summary>Jak przygotować się do wizyty?</summary>
+      <p>
+        Dzień wcześniej wyśpij się, pij dużo wody i nie spożywaj alkoholu.
+        W dniu sesji zjedz normalny posiłek, załóż wygodne ubranie
+        odsłaniające tatuowane miejsce i przyjdź wypoczęty.
+      </p>
+    </details>
+
+    <details>
+      <summary>Jak wygląda projekt?</summary>
+      <p>
+        Zaczynamy od Twojego pomysłu, referencji i miejsca na ciele.
+        Następnie przygotowujemy autorski projekt, który omawiamy przed
+        rozpoczęciem sesji. Nie kopiujemy cudzych tatuaży 1:1.
+      </p>
+    </details>
+
+    <details>
+      <summary>Czy pobieracie zadatek?</summary>
+      <p>
+        Tak. Zadatek potwierdza rezerwację terminu i jest rozliczany
+        w cenie sesji. Szczegóły dotyczące kwoty oraz ewentualnej zmiany
+        terminu ustalamy przed rezerwacją.
+      </p>
+    </details>
+
+    <details>
+      <summary>Jak dbać o świeży tatuaż?</summary>
+      <p>
+        Po sesji dostaniesz dokładną instrukcję pielęgnacji. Zwykle obejmuje
+        ona delikatne mycie, osuszanie bez pocierania i cienką warstwę
+        odpowiedniego preparatu. Podczas gojenia unikaj basenu, sauny,
+        intensywnego słońca i drapania skóry.
+      </p>
+    </details>
+
+    <details>
+      <summary>Czy tatuujecie osoby niepełnoletnie?</summary>
+      <p>
+        Tatuujemy wyłącznie osoby pełnoletnie. Jeśli masz mniej niż 18 lat,
+        wróć do nas po osiągnięciu pełnoletności.
+      </p>
+    </details>
+
+  </div>
+</div>
+
+    <div class="contact-booking reveal">
+
+  <div class="contact-copy">
+    <p class="tag">Kontakt</p>
+
+    <h2>
+      Zostaw<br>
+      <span>swój ślad.</span>
+    </h2>
+
+    
+
+    <a class="contact-email" href="mailto:hello@inkburst.waw.pl">
+  hello@inkburst.waw.pl
+</a>
+
+    <p class="contact-response">
+      Odpowiadamy zwykle w ciągu 1–2 dni roboczych.
+    </p>
+  </div>
+
+  <aside class="booking-widget" aria-label="Rezerwacja wizyty">
+  <div class="booking-widget-top">
+    <div>
+      <span class="booking-kicker">Rezerwacje online</span>
+      <h3>Wybierz termin.</h3>
+    </div>
+
+    <span class="booking-live">
+      <i></i>
+      Dostępne terminy
+    </span>
+  </div>
+
+  <div class="booking-calendar">
+    <iframe
+      src="https://franciszekv7yg.setmore.com"
+      title="Kalendarz rezerwacji Ink Burst"
+      loading="lazy"
+      scrolling="yes"
+      frameborder="0"
+      allow="web-share"
+    ></iframe>
+  </div>
+</aside>
+
+</div>
+    
+  </div>
+
+  <footer id="footer">
+  <div class="wrap">
+    <span>© 2026 Ink Burst. Wszelkie prawa zastrzeżone.</span>
+
+    <a href="polityka-prywatnosci.html">
+      Polityka prywatności
+    </a>
+
+    <a href="#hero">Wróć na górę ↑</a>
+  </div>
+</footer>
+</section>
+</main>
+
+
+
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+
+window.addEventListener('load', () => {
+  const svg = document.querySelector('.ink-drops');
+  const ink = document.querySelector('.ink-word');
+  const letters = Array.from(document.querySelectorAll('#burstWord span'));
+  const drop = document.querySelector('.drop-one');
+
+  if (!svg || !ink || letters.length !== 5 || !drop) return;
+
+  const svgPoint = svg.createSVGPoint();
+
+  function pointInsideSvg(element, xRatio, yRatio) {
+    const rect = element.getBoundingClientRect();
+
+    svgPoint.x = rect.left + rect.width * xRatio;
+    svgPoint.y = rect.top + rect.height * yRatio;
+
+    const point = svgPoint.matrixTransform(svg.getScreenCTM().inverse());
+    return { x: point.x, y: point.y };
+  }
+
+  function popAllLetters() {
+    letters.forEach((letter, index) => {
+      letter.classList.add('ink-filled');
+
+      letter.animate(
+        [
+          {
+            transform: 'scale(.84)',
+            filter: 'brightness(1.9)',
+            offset: 0
+          },
+          {
+            transform: 'scale(1.15)',
+            filter: 'brightness(1.3)',
+            offset: .45
+          },
+          {
+            transform: 'scale(.97)',
+            filter: 'brightness(1.08)',
+            offset: .76
+          },
+          {
+            transform: 'scale(1)',
+            filter: 'brightness(1)',
+            offset: 1
+          }
+        ],
+        {
+          duration: 480,
+          delay: index * 22,
+          easing: 'cubic-bezier(.2,1.35,.35,1)',
+          fill: 'both'
+        }
+      );
+    });
+  }
+
+  function animateDrop() {
+    const start = pointInsideSvg(ink, .54, .25);
+
+    /*
+      Litera R ma indeks 2:
+      B = 0, U = 1, R = 2, S = 3, T = 4.
+    */
+    const target = pointInsideSvg(letters[2], .5, .5);
+
+    const peak = {
+      x: start.x + (target.x - start.x) * .48,
+      y: Math.min(start.y, target.y) - 175
+    };
+
+    const startTime = performance.now();
+    const duration = 1450;
+
+    function frame(now) {
+      const t = Math.min((now - startTime) / duration, 1);
+
+      const x =
+        (1 - t) * (1 - t) * start.x +
+        2 * (1 - t) * t * peak.x +
+        t * t * target.x;
+
+      const y =
+        (1 - t) * (1 - t) * start.y +
+        2 * (1 - t) * t * peak.y +
+        t * t * target.y;
+
+      drop.setAttribute(
+        'transform',
+        `translate(${x} ${y}) rotate(${-24 + t * 170})`
+      );
+
+      drop.classList.add('is-flying');
+
+      if (t < 1) {
+        requestAnimationFrame(frame);
+        return;
+      }
+
+      drop.style.opacity = '0';
+      popAllLetters();
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  setTimeout(animateDrop, 450);
+});
+
+const portfolioSlider = document.querySelector('.portfolio-slider');
+
+if (portfolioSlider && window.matchMedia('(pointer:fine)').matches) {
+  let isDragging = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+  let moved = false;
+
+  portfolioSlider.addEventListener('pointerdown', event => {
+    if (event.button !== 0) return;
+
+    isDragging = true;
+    moved = false;
+    startX = event.clientX;
+    startScrollLeft = portfolioSlider.scrollLeft;
+
+    portfolioSlider.classList.add('is-dragging');
+    portfolioSlider.setPointerCapture(event.pointerId);
+  });
+
+  portfolioSlider.addEventListener('pointermove', event => {
+    if (!isDragging) return;
+
+    const distance = event.clientX - startX;
+
+    if (Math.abs(distance) > 4) {
+      moved = true;
+    }
+
+    portfolioSlider.scrollLeft = startScrollLeft - distance;
+  });
+
+  function stopDragging(event) {
+    if (!isDragging) return;
+
+    isDragging = false;
+    portfolioSlider.classList.remove('is-dragging');
+
+    if (portfolioSlider.hasPointerCapture(event.pointerId)) {
+      portfolioSlider.releasePointerCapture(event.pointerId);
+    }
+  }
+
+  portfolioSlider.addEventListener('pointerup', stopDragging);
+  portfolioSlider.addEventListener('pointercancel', stopDragging);
+}
+
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.getElementById('main-nav');
+
+if (menuToggle && mainNav) {
+  function closeMenu() {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Otwórz menu');
+    mainNav.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Otwórz menu' : 'Zamknij menu'
+    );
+
+    mainNav.classList.toggle('is-open', !isOpen);
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+  });
+
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 820) {
+      closeMenu();
+    }
+  });
+}
+
+</script>
+</body>
+</html>
